@@ -1,0 +1,102 @@
+.waiting{
+    width:100%;
+    height:100%;
+    display:table;
+    position: relative;
+}
+
+.waiting-pic{
+    display:table-cell;
+    text-align:center;
+    vertical-align: middle;
+    color:#999;
+    font-size:14px;
+}
+.waiting-pic span{
+    width:50px;
+    height:50px;
+    display:block;
+    margin:0 auto;
+    border-radius:8px;
+    background:#fff;
+}
+.waiting-pic img{
+    width:24px;
+    height:24px;
+    margin:13px 0 0;
+}
+.spinner {
+    -webkit-animation: rotator 1.4s linear infinite;
+    animation: rotator 1.4s linear infinite;
+    margin:12px 0 0;
+}
+
+@-webkit-keyframes rotator {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        -ms-transform: rotate(360deg)
+    }
+}
+
+@keyframes rotator {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        -ms-transform: rotate(360deg)
+    }
+}
+.path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 50;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    stroke: #4285F4;
+    -webkit-animation: dash 1.4s ease-in-out infinite;
+    animation: dash 1.4s ease-in-out infinite
+}
+@-webkit-keyframes dash {
+    0% {
+        stroke-dashoffset: 187
+    }
+
+    50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg)
+    }
+
+    100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg)
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 187
+    }
+
+    50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg)
+    }
+
+    100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg)
+    }
+}

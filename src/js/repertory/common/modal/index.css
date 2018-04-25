@@ -1,0 +1,262 @@
+.modal-wrap {
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    text-align: center;
+    outline: 0;
+}
+.modal-wrap:before {
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+    overflow: hidden;
+}
+.modal-mask {
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow: hidden;
+    outline: 0;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgb(0, 0, 0);
+    filter: alpha(opacity=60);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+.modal {
+    width: 450px;
+    background: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+}
+.modal .dialog {
+    width: 100%;
+    min-height: 162px;
+    display: table;
+}
+.modal .dialog .content {
+    padding: 25px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal .dialog-tip {
+    font-size: 14px;
+    padding: 25px 0 20px;
+}
+.modal-title {
+    width: 90%;
+    height: 66px;
+    line-height: 66px;
+    margin: 0 auto;
+    border-bottom: 1px #ccc solid;
+}
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMARevwq56uCiIAAAApSURBVAjXY3BkYGAQYRASYGBUBCIQg0FIUBEoyGgsACUhIhBZiEqILgBUJALL81QgwgAAAABJRU5ErkJggg==) no-repeat center center;
+}
+.modal-footer {
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px #ccc solid;
+    text-align: center;
+    font-size: 0;
+}
+.modal-footer .btn {
+    width: 50%;
+    height: 66px;
+    line-height: 66px;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    color: #5a5a5a;
+}
+.modal-footer .btn:nth-last-child(1) {
+    color: #1D87E4;
+}
+.modal-footer .btn-size1 {
+    width: 100%;
+}
+.modal-footer .btn-size2 {
+    width: 50%;
+}
+.modal-footer .btn-size3 {
+    width: 33.3%;
+}
+.modal .dialog-tip {
+    text-align: center;
+}
+.modal .dialog-tip img {
+    margin: 0 0 5px;
+}
+.modal .dialog-tip p {
+    font-size: 14px;
+    color: #999;
+}
+.modal .dialog-tip .dt {
+    font-size: 16px;
+    color: #4A4A4A;
+    padding: 2px 0 6px;
+}
+
+.modal-slide-fade-enter, .modal-slide-fade-appear {
+    -webkit-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    opacity: 0;
+}
+.modal-slide-fade-enter, .modal-slide-fade-appear, .modal-slide-fade-leave {
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+}
+.modal-slide-fade-enter.modal-slide-fade-enter-active, .modal-slide-fade-appear.modal-slide-fade-appear-active {
+    -webkit-animation: rcDialogSlideFadeIn .2s ease;
+    animation-name: rcDialogSlideFadeIn .2s ease;
+}
+.modal-slide-fade-leave.modal-slide-fade-leave-active {
+    -webkit-animation: rcDialogSlideFadeOut .2s ease;
+    animation: rcDialogSlideFadeOut .2s ease;
+}
+@-webkit-keyframes rcDialogSlideFadeIn {
+    0% {
+        -webkit-transform: translate(0, -20px);
+        transform: translate(0, -20px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+@keyframes rcDialogSlideFadeIn {
+    0% {
+        -webkit-transform: translate(0, -20px);
+        transform: translate(0, -20px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes rcDialogSlideFadeOut {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translate(0, -20px);
+        transform: translate(0, -20px);
+        opacity: 0;
+    }
+}
+@keyframes rcDialogSlideFadeOut {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translate(0, -20px);
+        transform: translate(0, -20px);
+        opacity: 0;
+    }
+}
+.modal-fade-enter, .modal-fade-appear {
+    opacity:1;
+}
+/*.modal-fade-enter, .modal-fade-appear {
+    opacity: 0;
+    -webkit-animation-duration: 0.1s;
+    animation-duration: 0.1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.modal-fade-leave {
+    -webkit-animation-duration: 0.1s;
+    animation-duration: 0.1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.modal-fade-enter.modal-fade-enter-active, .modal-fade-appear.modal-fade-appear-active {
+    -webkit-animation-name: rcDialogFadeIn;
+    animation-name: rcDialogFadeIn;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+.modal-fade-leave.modal-fade-leave-active {
+    -webkit-animation-name: rcDialogFadeOut;
+    animation-name: rcDialogFadeOut;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}*/
+/*@-webkit-keyframes rcDialogFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes rcDialogFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes rcDialogFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes rcDialogFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}*/
+.modal-mask-hidden {
+    display: none;
+}

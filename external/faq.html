@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<title>Flyme云服务FAQ</title>
+</head>
+<body>
+<div class="container opacity trans">
+	<!--首页-->
+    <div class="home">
+        <div class="teach_list" id="teach_list">
+            <div class="title">问题分类</div>
+            <div class="content">
+                <ul class="page page1 clearfix">
+                    <li><a href="javascript:void(0);" rel="syncList"><span><img src="/images/faq_images/sync.png"></span><p>同步逻辑</p></a></li>
+                    <li><a href="javascript:void(0);" rel="cloudBackup"><span><img src="/images/faq_images/data_recovery.png"></span><p>数据恢复</p></a></li>
+                    <li><a href="javascript:void(0);" rel="cloudWebsite"><span><img src="/images/faq_images/time_machine.png"></span><p>时光机</p></a></li>
+                    <li><a href="javascript:void(0);" rel="dataRecovery"><span><img src="/images/faq_images/cloud_website.png"></span><p>云服务网站</p></a></li>
+                    <li><a href="javascript:void(0);" rel="timemachine"><span><img src="/images/faq_images/cloud_backup.png"></span><p>桌面云备份</p></a></li>
+                    <li><a href="javascript:void(0);" rel="other"><span><img src="/images/faq_images/more.png"></span><p>更多</p></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="question_list">
+            <div class="title">典型问题</div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p class="t">什么是数据云同步功能？</p>
+                        <p class="c">
+                            <span class="word_indent">数据云同步能将你的个人数据上传到云端，在自动同步开启的情况下保持云端和本机数据的最新状态一致，并且支持同一魅族账号下多台设备保持数据一致。</span>
+                        </p>
+                        <i></i>
+                    </li>
+                    <li>
+                        <p class="t">Flyme云同步机制是什么？</p>
+                        <p class="c">
+                            <span>
+                                <span class="word_indent">1.该魅族账号在一台设备登录后首次使用云同步：系统会将该魅族账号云端的数据与本地的数据进行智能合并（不同的数据均保留，相同的数据只留一份），合并之后本地和云端数据保持一致。</span>
+                                <span class="word_indent">2.同步成功一次后：当本地或者云端有数据变更时，系统会将数据变更同步到另外一端，即无论在哪一边修改删除了数据都会影响另一边。</span>
+                                <span class="word_indent">3.在自动同步按钮打开的情况下，同步操作会自动完成，或者等待用户进行手动同步（刷机时双清或者退出账户时点击清空数据按钮不会影响云端数据）。</span>
+                            </span>
+                        </p>
+                        <i></i>
+                    </li>
+                    <li>
+                        <p class="t">与目前流行的同步助手有什么不同？</p>
+                        <p class="c">
+                            <span class="word_indent">同步助手仅仅是将你目前的数据备份一份到云端，但不能实时更新这一份数据，如果很长时间忘了更新，一旦手机或者数据丢失，恢复的也只是当时备份的数据，而Flyme数据云同步可以保持云端的数据与手机端的数据最新状态一致（开启自动同步后）。</span>
+                        </p>
+                        <i></i>
+                    </li>
+                    <li>
+                        <p class="t">错误操作删除了数据该怎么找回？</p>
+                        <p class="c">
+                            <span>
+                                <span class="word_indent">1.搭载Flyme 6以上的系统可以在手机端数据云同步的“时光机”与“回收站”中找回数据。</span>
+                                <span class="word_indent">2.所有用户都可以电脑登录<a href="http://cloud.flyme.cn" target="_blank">cloud.flyme.cn</a>,进入回收站恢复你的数据，目前支持6个月内的数据找回。</span>
+                            </span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--列表-->
+    <div class="list question_list list-reset">
+
+    </div>
+
+    <script class="template" type="text/template">
+        <div class="title">{{=title}}</div>
+        <div class="content">
+            <ul>
+                {{faq.forEach(function(name){ }}
+                    <li>
+                        <div class="t">{{=name.q}}</div>
+                        <div class="c word_indent">
+                            {{ if(name.a instanceof Array) { }}
+                                {{name.a.forEach(function(a){ }}
+                                    <p>{{-a}}</p>
+                                {{ }) }}
+                            {{ }else{ }}
+                                {{-name.a}}
+                            {{ } }}
+                        </div>
+                        <i></i>
+                    </li>
+                {{ }) }}
+            </ul>
+        </div>
+    </script>
+
+</div>
+
+<script src="/js/external/jquery-1.7.1.min.js"></script>
+<script src="/js/external/ejs-pro.js"></script>
+<script src="/js/external/utils.js"></script>
+<script type="text/javascript" src="https://tongji-res.meizu.com/resources/tongji/flow.js"></script>
+</body>
+</html>
